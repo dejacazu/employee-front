@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Employee } from '../../models/employee';
 import { EmployeeServiceService as EmployeeService } from './employee-service.service';
 import swal from 'sweetalert';
-import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-employee',
@@ -18,7 +17,6 @@ export class EmployeeComponent implements OnInit {
 
   constructor(
     private employeeService: EmployeeService,
-    private cdr: ChangeDetectorRef
   ) { }
 
   ngOnInit(): void {
@@ -60,11 +58,7 @@ export class EmployeeComponent implements OnInit {
         title: "Algo, sucedió",
         text: "Parece que no es posible obtener los datos del servidor ahora mismo, por favor intente más tarde",
         icon: "error",
-        // buttons: ["Aww yiss!"],
       })
     })
-    
-  
-   
   }
 }
